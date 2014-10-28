@@ -18,6 +18,9 @@
      js.src = "//connect.facebook.net/en_US/sdk.js";
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
+   
+   var access_token =   FB.getAuthResponse()['accessToken'];
+   console.log(access_token);
   </script>
   <div
   class="fb-like"
@@ -30,7 +33,7 @@
 
 <div class="Hello"></div>
 <script>
-  var access_token =   FB.getAuthResponse()['accessToken'];
+  
   alert(access_token);
 </script>
 </div>
