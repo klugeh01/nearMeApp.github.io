@@ -1,5 +1,5 @@
 <head>
-  <title>Facebook Near Me 9</title>
+  <title>Facebook Near Me 10</title>
 </head>
 <body>
   <script>
@@ -45,7 +45,7 @@
 				}
 		}
 
-		var theResource = 'https://graph.facebook.com/me/friends?fields=id,name,hometown,location&access_token='+access_token+'';
+		var theResource = 'https://graph.facebook.com/me/friends?fields=id,name,hometown,location&limit=5000&access_token='+access_token+'';
 		//var theResource = 'https://graph.facebook.com/v1.0/10205119348253305/friends?fields=id,name,hometown,location&limit=5000&offset=5000&access_token=CAACEdEose0cBANZAgrPQsyO0JQnMjLYsqPkEDfc5SwHheFrf14kwpzCrNNYNpCpKXVsIocC54pIOLpQlU8nqBZAbnoT0hrbumZBTMJYoyW1Yh3kNKFNUZAvZCQ1BpSmnDNuc5fb4vb9SeM67gMwKhXrdpInQ5vhdwMQB6ApU6CJYJp0f9r3nTW3XnGZBXLITxdKeiN2itf2cqZBPUAZCCPHq1JfPXWa0zu0ZD&__after_id=enc_AewG6U6LHa9xUN1IxFW1wkgSI6Wmu-2pe1maMnAMHpdJC9ln7usDuQfIVfCiH8ypgSE'
 
 		request.open('GET', theResource , true)
