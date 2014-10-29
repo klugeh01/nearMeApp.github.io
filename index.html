@@ -37,9 +37,8 @@
 
 					var res = eval( '(' + request.responseText + ')' )
 
-					var count = res['resultsCount'];
-					counts = 2;
-					console.log(counts);
+					var next = res['paging'];
+					alert(next);
 				}
 		}
 
