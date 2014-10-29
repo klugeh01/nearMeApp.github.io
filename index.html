@@ -37,7 +37,8 @@
 
 					var res = eval( '(' + request.responseText + ')' )
 
-					var next = res['next'];
+					var page = res['paging'];
+					var next = page['next'];
 					alert(next);
 				}
 		}
