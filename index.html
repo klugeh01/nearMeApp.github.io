@@ -44,7 +44,7 @@
 				}
 		}
 
-		var theResource = 'https://graph.facebook.com/me/friends.limit(5)?fields=id,name,hometown,location&access_token='+access_token+'';
+		var theResource = 'https://graph.facebook.com/me/friends?fields=id,name,hometown,location&access_token='+access_token+'';
 
 		request.open('GET', theResource , true)
 
