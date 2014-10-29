@@ -35,8 +35,12 @@
 					console.log(request.responseText);
 					var res = eval( '(' + request.responseText + ')' )
 					console.log(res);
-					 //for (var i=0; i<10; i++)
-                 			alert(res['data'][3]['location']['name'])
+					for (var i=0; i<10; i++)
+						if(res[''][2]['location'] != '')
+						{
+							alert('worked')
+						}
+                 			alert(res['data'][i]['location']['name'])
                  			alert(res['data'][100]['location']['name'])
 					
 				}
