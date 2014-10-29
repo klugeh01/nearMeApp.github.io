@@ -35,8 +35,9 @@
 					console.log(request.responseText);
 					var res = eval( '(' + request.responseText + ')' )
 					console.log(res);
-					 for (var i=0; i<10; i++)
-                 				alert(res['data'][i]['location']['name'])
+					 //for (var i=0; i<10; i++)
+                 			alert(res['data'][0]['location']['name'])
+                 			alert(res['data'][1]['location']['name'])
 					//nextfrined(next);
 					//alert(next);
 				}
