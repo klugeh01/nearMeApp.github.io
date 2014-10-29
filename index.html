@@ -18,11 +18,37 @@
      js.src = "//connect.facebook.net/en_US/sdk.js";
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
-   
-   var access_token =   FB.getAuthResponse()['accessToken'];
-   console.log("Hello");
-   console.log(access_token);
+  access_token = CAACEdEose0cBANZAgrPQsyO0JQnMjLYsqPkEDfc5SwHheFrf14kwpzCrNNYNpCpKXVsIocC54pIOLpQlU8nqBZAbnoT0hrbumZBTMJYoyW1Yh3kNKFNUZAvZCQ1BpSmnDNuc5fb4vb9SeM67gMwKhXrdpInQ5vhdwMQB6ApU6CJYJp0f9r3nTW3XnGZBXLITxdKeiN2itf2cqZBPUAZCCPHq1JfPXWa0zu0ZD
   
+  </script>
+  <script>
+      getFriendsLocation = function()
+			{
+				var request = new XMLHttpRequest()
+
+				request.onreadystatechange = function()
+				{
+					if (request.readyState == 4)   //
+						if (request.status == 200)
+						{  //successful request OK
+
+							console.log(request.responseText)
+
+							var res = eval( '(' + request.responseText + ')' )
+
+							alert(res)
+						}
+				}
+				var access_token =   FB.getAuthResponse()['accessToken'];
+
+				var theResource = 'https://graph.facebook.com/me/friends?fields=id,name,hometown,location&access_token='+access_token+'';
+
+				request.open('GET', theResource , true)
+
+				//request.open('GET','urlread.cgi',true)
+
+				request.send(null)
+			}
   </script>
   <div
   class="fb-like"
@@ -37,7 +63,8 @@
 <script>
   alert(access_token);
 </script>
+<button type="button" onclick="getFriendsLocation()">Get EPL Headlines</button>
 </div>
 </body>
 
-CAACEdEose0cBANZAgrPQsyO0JQnMjLYsqPkEDfc5SwHheFrf14kwpzCrNNYNpCpKXVsIocC54pIOLpQlU8nqBZAbnoT0hrbumZBTMJYoyW1Yh3kNKFNUZAvZCQ1BpSmnDNuc5fb4vb9SeM67gMwKhXrdpInQ5vhdwMQB6ApU6CJYJp0f9r3nTW3XnGZBXLITxdKeiN2itf2cqZBPUAZCCPHq1JfPXWa0zu0ZD
+
