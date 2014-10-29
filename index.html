@@ -37,7 +37,8 @@
 
 					var res = eval( '(' + request.responseText + ')' )
 
-					alert(res)
+					var count = res['resultsCount'];
+					alert(count);
 				}
 		}
 
