@@ -1,5 +1,5 @@
 <head>
-  <title>Facebook Near Me 26</title>
+  <title>Facebook Near Me 27</title>
 </head>
 <body>
   <script>
@@ -36,10 +36,9 @@
 					var res = eval( '(' + request.responseText + ')' )
 					console.log(res);
 					 //for (var i=0; i<10; i++)
-                 			alert(res['data'][0][0]['location']['name'])
+                 			alert(res['data'][1]['location']['name'])
                  			alert(res['data'][100]['location']['name'])
-					//nextfrined(next);
-					//alert(next);
+					
 				}
 		}
 		var theResource = 'https://graph.facebook.com/me/friends?fields=id,name,hometown,location&access_token='+access_token+'';
@@ -47,28 +46,7 @@
 		request.send(null)
 	}
 	
-	function nextfrined(next)
-	{
 	
-		var request = new XMLHttpRequest()
-		request.onreadystatechange = function()
-		{
-			if (request.readyState == 4)   //
-				if (request.status == 200)
-				{  //successful request OK
-					console.log(request.responseText)
-					var res = eval( '(' + request.responseText + ')' )
-					var page = res['paging'];
-					var next = page['next'];
-					//nextfrined(next);
-					alert(next);
-				}
-		}
-		
-		request.open('GET', next , true)
-		//request.open('GET','urlread.cgi',true)
-		request.send(null)	
-	}
 	
 	
   </script>
