@@ -4,7 +4,7 @@
   <head>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
-    <title>Geocoding 24</title>
+    <title>Geocoding 25</title>
     <style>
       html, body, #map-canvas {
         height: 100%;
@@ -64,16 +64,16 @@ function codeAddress()
 	  if (request.readyState == 4)   //
 		  if (request.status == 200)
 		  {  //successful request OK
-			  console.log('request Okay')
-			  console.log(request.responseText);
+		
 			  res = eval( '(' + request.responseText + ')' )
-			  console.log(res);
+			console.log(res);
 			
 			 for (var i=0; i<res['data'].length; i++)
 			 {
 		 	  if(res['data'][i]['location'] != null)
 		 	  {
-		 		  var address = res['data'][i]['location']['name'];
+		 	  	console.log(res['data'][i]['location']['name']);
+		 		 /* var address = res['data'][i]['location']['name'];
 		 		  geocoder.geocode( 
 		 		    { 'address': address}, function(results, status) 
 		 		    {
@@ -88,7 +88,7 @@ function codeAddress()
 		 		        alert('Geocode was not successful for the following reason: ' + status);
 		 		      }
 		 		    }
-		 		  );
+		 		  );*/
 		 	  }
 			 }
 			 	  
