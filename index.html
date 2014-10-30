@@ -1,5 +1,5 @@
 <head>
-  <title>Facebook Near Me 43</title>
+  <title>Facebook Near Me 44</title>
 <style>
       html, body, #map-canvas {
         height: 100%;
@@ -32,54 +32,7 @@ function initialize() {
 }
 
 function codeAddress() {
-  var address = document.getElementById('address').value;
-  geocoder.geocode( { 'address': address}, function(results, status) {
-    if (status == google.maps.GeocoderStatus.OK) {
-      //map.setCenter(results[0].geometry.location);
-      var marker = new google.maps.Marker({
-          map: map,
-          position: results[0].geometry.location,
-          title: 
-
-
-      });
-     
-    } else {
-      alert('Geocode was not successful for the following reason: ' + status);
-    }
-  });
-
-}
-
-google.maps.event.addDomListener(window, 'load', initialize);
-
-
-    </script>
-</head>
-<body>
-  <script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '663315157100597',
-      xfbml      : true,
-      version    : 'v2.1'
-    });
-  };
-  
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-   
- 
-  
-  </script>
-  <script>
-       
-	var access_token = 'CAACEdEose0cBALFniDDoXxZBJIgOX8GMfZA5gXHjs9CHHnQvK5Th80LIfbagbDvCAV4joFqslc6rUItA11C6zVtV5WzzZBlbZCiYU9pXulX0oVEX4OBxLNnrXfYCW8vDHYnmOo8SL2AksS2Lthn6HwOwSZCD7qGQwMMYGdUOgHU6AqJFZA2MQkju1mU5AB1TIYNou4n7x4USni7S1SyJx9CGvi97XiTMgZD';
+ var access_token = 'CAACEdEose0cBALFniDDoXxZBJIgOX8GMfZA5gXHjs9CHHnQvK5Th80LIfbagbDvCAV4joFqslc6rUItA11C6zVtV5WzzZBlbZCiYU9pXulX0oVEX4OBxLNnrXfYCW8vDHYnmOo8SL2AksS2Lthn6HwOwSZCD7qGQwMMYGdUOgHU6AqJFZA2MQkju1mU5AB1TIYNou4n7x4USni7S1SyJx9CGvi97XiTMgZD';
 	var request = new XMLHttpRequest()
 	request.onreadystatechange = function()
 	{
@@ -110,12 +63,43 @@ google.maps.event.addDomListener(window, 'load', initialize);
 					}
 					
 				
-	}
+			}
 		
 		var theResource = 'https://graph.facebook.com/me/friends?fields=id,name,hometown,location&access_token='+access_token+'';
 		request.open('GET', theResource , true)
 		request.send(null)
 	}
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+
+
+    </script>
+</head>
+<body>
+  <script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '663315157100597',
+      xfbml      : true,
+      version    : 'v2.1'
+    });
+  };
+  
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+   
+ 
+  
+  </script>
+  <script>
+       
+	
 	
 	
 	
