@@ -4,7 +4,7 @@
   <head>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
-    <title>Geocoding 36</title>
+    <title>Geocoding 38</title>
     <style>
       html, body, #map-canvas {
         height: 100%;
@@ -100,7 +100,7 @@ function addMarker(address, tmp, picture)
 	       if (status == google.maps.GeocoderStatus.OK) 
 	       {
 	         //map.setCenter(results[0].geometry.location);
-	         var marker = new google.maps.Marker({map: map, position: results[0].geometry.location, icon: picture, title: tmp});
+	         var marker = new google.maps.Marker({map: map, position: results[0].geometry.location, title: tmp});
 	      
 	       } 
 	       else 
