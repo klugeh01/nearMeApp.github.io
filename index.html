@@ -67,7 +67,7 @@ function codeAddress()
 		
 			  res = eval( '(' + request.responseText + ')' )
 			console.log(res);
-			
+			for (n=0; n<100; n++){
 			 for (var i=0; i<res['data'].length; i++)
 			 {
 		 	  if(res['data'][i]['location'] != null)
@@ -81,6 +81,7 @@ function codeAddress()
 		 	  }
 			 }
 			 	  
+		  }
 		  }
 	
   }	  
