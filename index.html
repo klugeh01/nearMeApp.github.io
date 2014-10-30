@@ -4,7 +4,7 @@
   <head>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
-    <title>Geocoding 27</title>
+    <title>Geocoding 28</title>
     <style>
       html, body, #map-canvas {
         height: 100%;
@@ -72,7 +72,9 @@ function codeAddress()
 			 {
 		 	  if(res['data'][i]['location'] != null)
 		 	  {
-		 	  	console.log(res['data'][i]['location']['name']);
+		 	  	
+		 	  	var tmp = res['data'][i]['location']['name'];
+		 	  	console.log(tmp)
 		 		  var address = res['data'][i]['location']['name'];
 		 		  geocoder.geocode( 
 		 		    { 'address': address}, function(results, status) 
