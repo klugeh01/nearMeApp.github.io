@@ -100,8 +100,7 @@ function addMarker(address, tmp, picture)
 	 geocoder.geocode( 
 	     { 'address': address}, function(results, status) 
 	     {
-	       while (status != google.maps.GeocoderStatus.OK){}
-	       }
+	       
 	       if (status == google.maps.GeocoderStatus.OK) 
 	       {
 	         //map.setCenter(results[0].geometry.location);
