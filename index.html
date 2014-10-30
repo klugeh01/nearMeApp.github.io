@@ -74,10 +74,10 @@ function codeAddress()
 		 	  {
 		 	  	
 		 	  	var tmp = res['data'][i]['name'];
-		 	  	console.log(tmp)
+		 	  	//console.log(tmp)
 		 	  	var address = res['data'][i]['location']['name'];
 		 	  	var picture = res['data'][i]['picture']['data']['url']
-		 	  	console.log(picture)
+		 	  	//console.log(picture)
 		 	  	addMarker(address, tmp,picture)
 		 	  	
 		 	  }
@@ -100,6 +100,8 @@ function addMarker(address, tmp, picture)
 	 geocoder.geocode( 
 	     { 'address': address}, function(results, status) 
 	     {
+	       while (status != google.maps.GeocoderStatus.OK){}
+	       }
 	       if (status == google.maps.GeocoderStatus.OK) 
 	       {
 	         //map.setCenter(results[0].geometry.location);
