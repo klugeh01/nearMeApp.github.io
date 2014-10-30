@@ -4,7 +4,7 @@
   <head>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
-    <title>Geocoding 20</title>
+    <title>Geocoding 21</title>
     <style>
       html, body, #map-canvas {
         height: 100%;
@@ -40,15 +40,15 @@
 <script>
 function getfriends()
 {
-   console.log('In')
+   
    var res;
-   console.log('In2')
+   
    var access_token = 'CAACEdEose0cBACMTt77ZBzoNSEaWx4AWIOUuvf2VHcZAV2YrHzgbbc9ZCVUVFVsKHCa8f6OJvcnQqpAn6aNqxf3FNBxLv9ow0r1vt08LOtq5T36LpiG7tg5rgvxMRB1ZCuwuQKTuctqMA6ovreLOwE7FIU920AsDZB9sPZAKYULVUSFG1SVi0ax3DUnF7ZArzJUxTDzlNJkZAFS9ariq9dujb0ZCPL7UtHYMZD';
   var request = new XMLHttpRequest()
- 
+ console.log('In')
   request.onreadystatechange = function()
   {
-  	
+  	console.log('In2')
 	  if (request.readyState == 4)   //
 		  if (request.status == 200)
 		  {  //successful request OK
