@@ -4,7 +4,7 @@
   <head>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
-    <title>Geocoding 13</title>
+    <title>Geocoding 14</title>
     <style>
       html, body, #map-canvas {
         height: 100%;
@@ -53,9 +53,10 @@ function codeAddress()
  
   var access_token = 'CAACEdEose0cBALFniDDoXxZBJIgOX8GMfZA5gXHjs9CHHnQvK5Th80LIfbagbDvCAV4joFqslc6rUItA11C6zVtV5WzzZBlbZCiYU9pXulX0oVEX4OBxLNnrXfYCW8vDHYnmOo8SL2AksS2Lthn6HwOwSZCD7qGQwMMYGdUOgHU6AqJFZA2MQkju1mU5AB1TIYNou4n7x4USni7S1SyJx9CGvi97XiTMgZD';
   var request = new XMLHttpRequest()
-  console.log('var request made')
+ 
   request.onreadystatechange = function()
   {
+  	 console.log('request function made')
 	  if (request.readyState == 4)   //
 		  if (request.status == 200)
 		  {  //successful request OK
