@@ -72,14 +72,14 @@ function codeAddress()
 			 {
 		 	  if(res['data'][i]['location'] != null)
 		 	  {
-		 	  	setTimeout(function() {
+		 	  	
 		 	  	var tmp = res['data'][i]['name'];
 		 	  	console.log(tmp)
 		 	  	var address = res['data'][i]['location']['name'];
 		 	  	var picture = res['data'][i]['picture']['data']['url']
 		 	  	console.log(picture)
 		 	  	addMarker(address, tmp,picture)
-		 	  	},50);
+		 	  	
 		 	  }
 			 }
 			 	  
