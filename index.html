@@ -4,7 +4,7 @@
   <head>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
-    <title>Geocoding 35</title>
+    <title>Geocoding 36</title>
     <style>
       html, body, #map-canvas {
         height: 100%;
@@ -75,10 +75,9 @@ function codeAddress()
 		 	  	var tmp = res['data'][i]['name'];
 		 	  	console.log(tmp)
 		 	  	var address = res['data'][i]['location']['name'];
-		 	  	addMarker(address, tmp)
-		 	  	
-		 		  
-		 		 
+		 	  	var picture = res['data'][i]['picture']['data']['url']
+		 	  	console.log(picture)
+		 	  	addMarker(address, tmp,picture)
 		 	  }
 			 }
 			 	  
@@ -93,7 +92,7 @@ function codeAddress()
 
 }
 
-function addMarker(address, tmp)
+function addMarker(address, tmp, picture)
 {
 	 geocoder.geocode( 
 	     { 'address': address}, function(results, status) 
@@ -101,7 +100,7 @@ function addMarker(address, tmp)
 	       if (status == google.maps.GeocoderStatus.OK) 
 	       {
 	         //map.setCenter(results[0].geometry.location);
-	         var marker = new google.maps.Marker({map: map, position: results[0].geometry.location, title: tmp});
+	         var marker = new google.maps.Marker({map: map, position: results[0].geometry.location, icon: picture, title: tmp});
 	      
 	       } 
 	       else 
