@@ -4,7 +4,7 @@
   <head>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
-    <title>Geocoding 32</title>
+    <title>Geocoding 33</title>
     <style>
       html, body, #map-canvas {
         height: 100%;
@@ -74,23 +74,11 @@ function codeAddress()
 		 	  {
 		 	  	var tmp = res['data'][i]['name'];
 		 	  	console.log(tmp)
+		 	  	var address = res['data'][i]['location']['name'];
+		 	  	addMarker(tmp, address)
 		 	  	
-		 		  var address = res['data'][i]['location']['name'];
-		 		  geocoder.geocode( 
-		 		    { 'address': address}, function(results, status) 
-		 		    {
-		 		      if (status == google.maps.GeocoderStatus.OK) 
-		 		      {
-		 		        //map.setCenter(results[0].geometry.location);
-		 		        var marker = new google.maps.Marker({map: map, position: results[0].geometry.location, title: tmp});
-		 		     
-		 		      } 
-		 		      else 
-		 		      {
-		 		        alert('Geocode was not successful for the following reason: ' + status);
-		 		      }
-		 		    }
-		 		  );
+		 		  
+		 		 
 		 	  }
 			 }
 			 	  
@@ -103,6 +91,25 @@ function codeAddress()
  
   
 
+}
+
+function addMarker()
+{
+	 geocoder.geocode( 
+	     { 'address': address}, function(results, status) 
+	     {
+	       if (status == google.maps.GeocoderStatus.OK) 
+	       {
+	         //map.setCenter(results[0].geometry.location);
+	         var marker = new google.maps.Marker({map: map, position: results[0].geometry.location, title: tmp});
+	      
+	       } 
+	       else 
+	       {
+	         alert('Geocode was not successful for the following reason: ' + status);
+	       }
+	     }
+	   );
 }
 
 
