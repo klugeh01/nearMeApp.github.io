@@ -4,7 +4,7 @@
   <head>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
-    <title>Geocoding 14</title>
+    <title>Geocoding 15</title>
     <style>
       html, body, #map-canvas {
         height: 100%;
@@ -56,39 +56,7 @@ function codeAddress()
  
   request.onreadystatechange = function()
   {
-  	 console.log('request function made')
-	  if (request.readyState == 4)   //
-		  if (request.status == 200)
-		  {  //successful request OK
-			  console.log('request Okay')
-			  console.log(request.responseText);
-			  var res = eval( '(' + request.responseText + ')' )
-			  console.log(res);
-			
-			  for (var i=0; i<res['data'].length; i++)
-			 	  if(res['data'][i]['location'] != null)
-			 	  {
-			 		  var address = res['data'][i]['location']['name'];
-			 		  geocoder.geocode( 
-			 		    { 'address': address}, function(results, status) 
-			 		    {
-			 		      if (status == google.maps.GeocoderStatus.OK) 
-			 		      {
-			 		        //map.setCenter(results[0].geometry.location);
-			 		        var marker = new google.maps.Marker({map: map, position: results[0].geometry.location, title: res['data'][i]['name']});
-			 		     
-			 		      } 
-			 		      else 
-			 		      {
-			 		        alert('Geocode was not successful for the following reason: ' + status);
-			 		      }
-			 		    }
-			 		  );
-			 	  }
-			    	
-			  
-		  }
-	
+  	    console.log('In')
 	    var theResource = 'https://graph.facebook.com/me/friends?fields=id,name,hometown,location&access_token='+access_token+'';
 	    request.open('GET', theResource , true)
 	    request.send(null)
