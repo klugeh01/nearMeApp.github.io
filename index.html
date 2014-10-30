@@ -1,5 +1,5 @@
 <head>
-  <title>Facebook Near Me 40</title>
+  <title>Facebook Near Me 41</title>
 </head>
 <body>
   <script>
@@ -34,7 +34,7 @@
 				{  //successful request OK
 					console.log(request.responseText);
 					var res = eval( '(' + request.responseText + ')' )
-					console.log(res);
+					console.log(res['data'].length);
 					
 					alert(res.length)
 					for (var i=0; i<res.length; i++)
