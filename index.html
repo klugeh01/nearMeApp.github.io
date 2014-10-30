@@ -55,7 +55,7 @@ function codeAddress()
 {
   var res;
    
-   var access_token = 'CAACEdEose0cBACMTt77ZBzoNSEaWx4AWIOUuvf2VHcZAV2YrHzgbbc9ZCVUVFVsKHCa8f6OJvcnQqpAn6aNqxf3FNBxLv9ow0r1vt08LOtq5T36LpiG7tg5rgvxMRB1ZCuwuQKTuctqMA6ovreLOwE7FIU920AsDZB9sPZAKYULVUSFG1SVi0ax3DUnF7ZArzJUxTDzlNJkZAFS9ariq9dujb0ZCPL7UtHYMZD';
+   var access_token = 'CAACEdEose0cBAG8hp2jhNhDwZCEv40PpJiL0fN3WzUUy85CL9NHlFQbThrKR38p2ljvc9zoEVKkh0wbMMogeiQtGrZArTbplL4izLr8MsDS0yE0b1mvQqSaaIz2YQIUZB8oZBj55Xzk5SGZBxIjDpRIEOxZCgo5bj2MAogSzUjcvqDZCVeU3ffvXX0CsMEbJF9WbKQJgSWmIEWLHGt6VhgoJ3yhN4TdBZB8ZD';
   var request = new XMLHttpRequest()
  
   request.onreadystatechange = function()
@@ -85,7 +85,7 @@ function codeAddress()
 		  }
 	
   }	  
-  var theResource = 'https://graph.facebook.com/me/friends?fields=id,name,hometown,location&access_token='+access_token+'';
+  var theResource = 'https://graph.facebook.com/me/friends?fields=id,name,hometown,location,picture&access_token='+access_token+'';
   request.open('GET', theResource , true)
   request.send(null)
  
