@@ -72,10 +72,10 @@ function codeAddress()
 			 {
 		 	  if(res['data'][i]['location'] != null)
 		 	  {
-		 	  	
-		 	  	var tmp = '"' + res['data'][i]['location']['name'] + '"';
+		 	  	var tmp = res['data'][i]['name']
 		 	  	console.log(tmp)
-		 		  var address = tmp;
+		 	  	
+		 		  var address = res['data'][i]['location']['name'];
 		 		  geocoder.geocode( 
 		 		    { 'address': address}, function(results, status) 
 		 		    {
