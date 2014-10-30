@@ -1,5 +1,5 @@
 <head>
-  <title>Facebook Near Me 33</title>
+  <title>Facebook Near Me 34</title>
 </head>
 <body>
   <script>
@@ -36,9 +36,13 @@
 					var res = eval( '(' + request.responseText + ')' )
 					console.log(res);
 					
-						if(res['data'][2]['location'] == null)
+						if(res['data'][0]['location'] == null)
 						{
 							alert('worked')
+						}
+						else
+						{
+							alert('bye')
 						}
 						
 					/*for (var i=0; i<10; i++)
