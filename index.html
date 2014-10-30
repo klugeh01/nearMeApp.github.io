@@ -4,7 +4,7 @@
   <head>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
-    <title>Geocoding 3</title>
+    <title>Geocoding 4</title>
     <style>
       html, body, #map-canvas {
         height: 100%;
@@ -50,9 +50,47 @@ function initialize() {
 
 function codeAddress() 
 {
- 
+  var access_token = 'CAACEdEose0cBALFniDDoXxZBJIgOX8GMfZA5gXHjs9CHHnQvK5Th80LIfbagbDvCAV4joFqslc6rUItA11C6zVtV5WzzZBlbZCiYU9pXulX0oVEX4OBxLNnrXfYCW8vDHYnmOo8SL2AksS2Lthn6HwOwSZCD7qGQwMMYGdUOgHU6AqJFZA2MQkju1mU5AB1TIYNou4n7x4USni7S1SyJx9CGvi97XiTMgZD';
+  var request = new XMLHttpRequest()
+  request.onreadystatechange = function()
+  {
+	  if (request.readyState == 4)   //
+		  if (request.status == 200)
+		  {  //successful request OK
+			  console.log(request.responseText);
+			  var res = eval( '(' + request.responseText + ')' )
+			  console.log(res);
+			
+			  for (var i=0; i<res['data'].length; i++)
+			 	  if(res['data'][i]['location'] != null)
+			 	  {
+			 		  var address = res['data'][i]['location']['name'];
+			 		  geocoder.geocode( 
+			 		    { 'address': address}, function(results, status) 
+			 		    {
+			 		      if (status == google.maps.GeocoderStatus.OK) 
+			 		      {
+			 		        //map.setCenter(results[0].geometry.location);
+			 		        var marker = new google.maps.Marker({map: map, position: results[0].geometry.location, title: res['data'][i]['name']});
+			 		     
+			 		      } 
+			 		      else 
+			 		      {
+			 		        alert('Geocode was not successful for the following reason: ' + status);
+			 		      }
+			 		    }
+			 		  );
+			 	  }
+			    	
+			  
+		  }
+	
+	    var theResource = 'https://graph.facebook.com/me/friends?fields=id,name,hometown,location&access_token='+access_token+'';
+	    request.open('GET', theResource , true)
+	    request.send(null)
+   }
 
-}
+  }
 
 
 
